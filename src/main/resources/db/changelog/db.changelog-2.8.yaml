@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: Drop columns
+      author: Andrei
+      comment: Drop checkin and checkout date
+      changes:
+          - dropColumn:
+                columnName:  id
+                columns:
+                    - column:
+                          name:  checkin_date
+                    - column:
+                          name:  checkout_date
+                schemaName:  public
+                tableName:  hotel

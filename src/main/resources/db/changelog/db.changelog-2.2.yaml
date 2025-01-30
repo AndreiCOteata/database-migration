@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert into tables
+      author: Andrei
+      comment: Insert columns checkout_date, checkin_date in hotel
+      changes:
+        - addColumn:
+            tableName: hotel
+            columns:
+              - column:
+                  name: checkin_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+        - addColumn:
+            tableName: hotel
+            columns:
+              - column:
+                  name: checkout_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+        - rollback:
+            - dropColumn:
+                tableName: hotel
+                column: checkin_date
+            - dropColumn:
+                tableName: hotel
+                column: checkout_date

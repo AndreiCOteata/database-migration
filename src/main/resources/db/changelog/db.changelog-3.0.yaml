@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert column in reservation
+      author: Andrei
+      comment: Add Column reservation
+      changes:
+        - addColumn:
+            tableName: reservation
+            columns:
+              - column:
+                  name: number_rooms
+                  type: bigint
+                  defaultValue: 0
+                  constraints:
+                    nullable: false
+                    defaultNullValue: 0
+        - rollback:
+            - dropColumn:
+              tableName: reservation
+              column: number_rooms

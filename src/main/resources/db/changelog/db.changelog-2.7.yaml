@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop Not null constraint
+      author: Andrei
+      comment: drop Not null constraint in multiple tables
+      changes:
+        -  dropNotNullConstraint:
+             columnDataType:  varchar
+             columnName:  language
+             tableName:  profile
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: company_id
+            tableName: account
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: address_id
+            tableName: account

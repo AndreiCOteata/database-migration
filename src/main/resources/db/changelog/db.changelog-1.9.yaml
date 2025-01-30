@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: create role_profile table
+      author: Andrei
+      comment: Create role_profile table
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            disabled:  false
+            tableName: hotel
+            validate: true

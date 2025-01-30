@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create room_type table
+      author: Andrei
+      comment: Create room_type table
+      changes:
+        - createTable:
+            tableName: room_type
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_room_type
+              - column:
+                  name: type
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+        - rollback:
+            - dropTable:
+                tableName: country

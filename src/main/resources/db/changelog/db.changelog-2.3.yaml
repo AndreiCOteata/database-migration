@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert into country table
+      author: Andrei
+      comment: Populate country table with values
+      changes:
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: country
+            columns:
+              - column:
+                  name: name
+                  value: 'ROMANIA'
+              - column:
+                  name: id
+                  value: 1
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: country
+            columns:
+              - column:
+                  name: name
+                  value: 'FRANCE'
+              - column:
+                  name: id
+                  value: 2
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: country
+            columns:
+              - column:
+                  name: name
+                  value: 'ENGLAND'
+              - column:
+                  name: id
+                  value: 3
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: country
+            columns:
+              - column:
+                  name: name
+                  value: 'DENMARK'
+              - column:
+                  name: id
+                  value: 4

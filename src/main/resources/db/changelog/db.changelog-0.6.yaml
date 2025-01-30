@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: create room_description table
+      author: Andrei
+      comment: Create room_description table
+      changes:
+        - createTable:
+            tableName: room_description
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_room_description
+              - column:
+                  name: price
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: number
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - rollback:
+            - dropTable:
+              tableName: room_description

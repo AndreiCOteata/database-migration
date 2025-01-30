@@ -1,0 +1,34 @@
+{
+  "properties": [
+    {
+      "name": "database.ssl-config",
+      "type": "java.lang.String",
+      "description": "Description for server.database.ssl-config."
+    },
+    {
+      "name": "database.host",
+      "type": "java.lang.String",
+      "description": "Description for server.database.host."
+    },
+    {
+      "name": "database.name",
+      "type": "java.lang.String",
+      "description": "Description for server.database.name."
+    },
+    {
+      "name": "database.port",
+      "type": "java.lang.String",
+      "description": "Description for server.database.port."
+    },
+    {
+      "name": "database.username",
+      "type": "java.lang.String",
+      "description": "Description for server.database.username."
+    },
+    {
+      "name": "database.password",
+      "type": "jasypt.encryptor.password",
+      "description": "Description for server.database.password."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create role_profile table
+      author: Andrei
+      comment: Drop column and add another in account table
+      changes:
+        - dropColumn:
+            columnName: id
+            columns:
+              - column:
+                  name: account_id
+            schemaName: public
+            tableName: profile
+        - addColumn:
+            tableName: account
+            columns:
+              column:
+                name: profile_id
+                type: bigint
+        - addForeignKeyConstraint:
+            baseColumnNames: profile_id
+            baseTableName: account
+            baseTableSchemaName: public
+            constraintName: fk_profile
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: profile
+            referencedTableSchemaName: public
+            validate: true

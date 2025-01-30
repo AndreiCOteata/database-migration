@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: add column in reservation
+      author: Andrei
+      comment: add column in reservation
+      changes:
+        - addColumn:
+            tableName: reservation
+            columns:
+              - column:
+                  name: room_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_room
+                    references: room(id)
+                    nullable: false
+        - rollback:
+            - dropColumn:
+                tableName: reservation
+                column: room_id

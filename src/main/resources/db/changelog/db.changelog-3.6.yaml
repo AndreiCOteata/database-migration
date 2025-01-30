@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: add data
+      author: Andrei
+      comment: Add data for some of the tables
+      changes:
+        - sqlFile:
+            path: scripts/data.sql

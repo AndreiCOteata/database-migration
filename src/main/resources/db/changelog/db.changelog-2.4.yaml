@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert into category table
+      author: Andrei
+      comment: Populate category table with values
+      changes:
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: 'BUSINESS'
+              - column:
+                  name: id
+                  value: 1
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: 'AIRPORT'
+              - column:
+                  name: id
+                  value: 2
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: 'SUITE'
+              - column:
+                  name: id
+                  value: 3
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: 'MOTEL'
+              - column:
+                  name: id
+                  value: 4
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: 'BB'
+              - column:
+                  name: id
+                  value: 5

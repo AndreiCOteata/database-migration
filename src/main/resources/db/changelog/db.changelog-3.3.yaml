@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert into room_type table
+      author: Andrei
+      comment: Populate room_type table with values
+      changes:
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: room_type
+            columns:
+              - column:
+                  name: type
+                  value: 'SINGLE'
+              - column:
+                  name: id
+                  value: 1
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: room_type
+            columns:
+              - column:
+                  name: type
+                  value: 'DOUBLE'
+              - column:
+                  name: id
+                  value: 2
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: room_type
+            columns:
+              - column:
+                  name: type
+                  value: 'QUEEN'
+              - column:
+                  name: id
+                  value: 3
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: room_type
+            columns:
+              - column:
+                  name: type
+                  value: 'KING'
+              - column:
+                  name: id
+                  value: 4
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: room_type
+            columns:
+              - column:
+                  name: type
+                  value: 'VILLA'
+              - column:
+                  name: id
+                  value: 5

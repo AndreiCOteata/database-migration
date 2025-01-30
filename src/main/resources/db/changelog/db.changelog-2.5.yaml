@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert into role table
+      author: Andrei
+      comment: Populate role table with values
+      changes:
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: role
+            columns:
+              - column:
+                  name: name
+                  value: 'ROLE_USER'
+              - column:
+                  name: id
+                  value: 1
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: role
+            columns:
+              - column:
+                  name: name
+                  value: 'ROLE_ADMIN'
+              - column:
+                  name: id
+                  value: 2
+        - insert:
+            dbms: '!h2,  postgresql'
+            schemaName: public
+            tableName: role
+            columns:
+              - column:
+                  name: name
+                  value: 'SWAGGER_ADMIN'
+              - column:
+                  name: id
+                  value: 3

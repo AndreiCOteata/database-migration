@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop Not null constraint
+      author: Andrei
+      comment: drop Not null constraint on avatar column in profile
+      changes:
+        -  dropNotNullConstraint:
+            columnDataType:  varchar
+            columnName:  avatar
+            tableName:  profile

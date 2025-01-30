@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: create reservation table
+      author: Andrei
+      comment: Create reservation table
+      changes:
+        - createTable:
+            tableName: reservation
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_reservation
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_account
+                    references: account(id)
+                    nullable: false
+              - column:
+                  name: reservation_status_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_reservation_status
+                    references: reservation_status_events(id)
+                    nullable: false
+              - column:
+                  name: start_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ts_created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ts_updated
+                  type: timestamp
+              - column:
+                  name: total_price
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - rollback:
+            - dropTable:
+                tableName: reservation
+
+

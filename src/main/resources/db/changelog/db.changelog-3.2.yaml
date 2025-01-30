@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: add column in room_description
+      author: Andrei
+      comment: add column in room_description
+      changes:
+        - addColumn:
+            tableName: room_description
+            columns:
+              - column:
+                  name: room_type_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_room_description
+                    references: room_type(id)
+                    nullable: false
+        - rollback:
+            - dropColumn:
+                tableName: room_description
+                column: room_type_id

@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create synchronization table
+      author: Andrei
+      comment: Create synchronization table
+      changes:
+        - createTable:
+            tableName: synchronization
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_synchronization
+              - column:
+                  name: reservation_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_reservation
+                    references: reservation(id)
+                    nullable: false
+                    unique: true
+              - column:
+                  name: channel_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_channel
+                    references: channel(id)
+                    nullable: false
+              - column:
+                  name: message_sent
+                  type: text
+              - column:
+                  name: message_received
+                  type: text
+              - column:
+                  name: ts_created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+        - rollback:
+            - dropTable:
+                tableName: synchronization
+

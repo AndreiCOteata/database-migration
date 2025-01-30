@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: create profile table
+      author: Andrei
+      comment: Create profile table
+      changes:
+        - createTable:
+            tableName: profile
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_profile
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_account
+                    references: account(id)
+                    nullable: false
+                    unique: true
+              - column:
+                  name: avatar
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: failed_login_attempts
+                  type: bigint
+              - column:
+                  name: last_failed_login_time
+                  type: timestamp
+              - column:
+                  name: is_active
+                  type: bool
+              - column:
+                  name: language
+                  type: varchar
+                  constraints:
+                    nullable: false
+        - rollback:
+            - dropTable:
+                tableName: profile

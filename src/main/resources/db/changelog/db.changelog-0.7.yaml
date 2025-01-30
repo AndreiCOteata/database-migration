@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create room table
+      author: Andrei
+      comment: Create room table
+      changes:
+        - createTable:
+            tableName: room
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_room
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: hotel_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_hotel
+                    references: hotel(id)
+                    nullable: false
+              - column:
+                  name: room_description_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_room_description
+                    references: room_description(id)
+                    nullable: false
+        - rollback:
+            - dropTable:
+              tableName: room

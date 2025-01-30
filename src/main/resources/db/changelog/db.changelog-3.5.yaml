@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: rename column
+      author: Andrei
+      comment: rename column in room_description
+      changes:
+        - renameColumn:
+            columnDataType: bigint
+            newColumnName: number_of_rooms
+            oldColumnName: number
+            schemaName: public
+            tableName: room_description

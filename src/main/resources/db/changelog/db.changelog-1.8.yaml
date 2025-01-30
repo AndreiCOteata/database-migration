@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create role_profile table
+      author: Andrei
+      comment: Create role_profile table
+      changes:
+        - createTable:
+            tableName: role_profile
+            columns:
+              - column:
+                  name: profile_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_profile
+                    references: profile(id)
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_role
+                    references: role(id)
+                    nullable: false
+        - rollback:
+            - dropTable:
+              tableName: role_profile

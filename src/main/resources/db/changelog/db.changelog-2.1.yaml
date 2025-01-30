@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop tables
+      author: Andrei
+      comment: Drop syncronization, channel, channel_used
+      changes:
+        - dropTable:
+            cascadeConstraints:  true
+            schemaName:  public
+            tableName:  channel
+        - dropTable:
+            cascadeConstraints:  true
+            schemaName:  public
+            tableName:  synchronization
+        - dropTable:
+            cascadeConstraints:  true
+            schemaName:  public
+            tableName:  channel_used

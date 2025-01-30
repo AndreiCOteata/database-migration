@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create channel_used table
+      author: Andrei
+      comment: Create channel_used table
+      changes:
+        - createTable:
+            tableName: channel_used
+            columns:
+              - column:
+                  name: room_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_channel_used_room
+                    foreignKeyName: fk_room
+                    references: room(id)
+                    nullable: false
+                    unique: true
+              - column:
+                  name: channel_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_channel_used
+                    foreignKeyName: fk_channel
+                    references: channel(id)
+                    nullable: false
+                    unique: true
+        - rollback:
+            - dropTable:
+                tableName: channel_used
