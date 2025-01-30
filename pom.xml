@@ -33,8 +33,8 @@
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub SDAPackageRegistry Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/SDAPackageRegistry/database-migration</url>
+			<name>GitHub BookingApp Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/AndreiCOteata/database-migration</url>
 		</repository>
 	</distributionManagement>
 
