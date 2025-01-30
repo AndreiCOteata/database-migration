@@ -1,4 +1,4 @@
-package com.sda.databasemigration;
+package com.bookingApp.databasemigration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
